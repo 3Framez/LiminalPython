@@ -37,3 +37,44 @@ tipAmount = billOfEach * percentTip #the tip amount is each persons bill * the t
 finalBill = billOfEach + tipAmount #the final bill each person's bill plus the tip amount calculated
 print(f"Each person should pay: ${round(finalBill,2)}") #round to 2 decimal places
 
+
+"""
+Get remainder of two random numbers
+"""
+# num1 = int(input("Enter first number: "))
+# num2 = int(input("Enter second number: "))
+# print(num1%num2)
+
+"""
+You have 2 variables chars and word.
+chars = <<>>
+word = hello
+ we are using string slicing to get result: <<hello>>
+"""
+chars = "<<>>"
+word = "hello"
+newWord = chars[0:2] + word + chars[2:] #chars[0:2] start from index position 0 and give me two characters
+print(newWord)
+
+"""
+word1 = Veicle
+word2 = Robot
+Result = eichleRbot
+"""
+
+word1 = "Vehicle"
+word2 = "Robot"
+result = word1[1:]+word2[0:1]+word2[2:]
+print(result)
+
+"""
+chars = "<{<||>}>"
+word = "mirror"
+result = <{<|mirror|>}>
+
+use len() to figure out the length of the string and solve
+"""
+lenChars = int(len(chars)/2) #we typecast to int because result is in float which won't work when used as a placeholder
+print(lenChars)
+result = chars[0:lenChars]+word+chars[lenChars:] #lenchars gives a value of 4
+print(result)
