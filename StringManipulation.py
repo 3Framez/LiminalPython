@@ -24,5 +24,16 @@ days = (ageLimit * 365) - (age * 365) #convert years left to days
 print(f"You have {months} months and {weeks} weeks and {days} days left")
 
 
+# Tip calculator
+print("Welcome to the tip calculator.")
+totalBill = float(input("What was the total bill $:" )) #total bill is float $000.00
+tip = int(input("What percentage tip would you like to give? 10,12 or 15"))
 
+percentTip = tip/100 #percentage tip equates to 0.1, 0.12, 0.15
+
+billSplit = int(input("How many people to split the bill?"))
+billOfEach = totalBill/billSplit  #each persons pay is the total bill divided by number of persons paying
+tipAmount = billOfEach * percentTip #the tip amount is each persons bill * the tip percentage
+finalBill = billOfEach + tipAmount #the final bill each person's bill plus the tip amount calculated
+print(f"Each person should pay: ${round(finalBill,2)}") #round to 2 decimal places
 
