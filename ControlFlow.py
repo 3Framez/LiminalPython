@@ -3,13 +3,55 @@
 
 #Love language calculator
 print("Welcome to the love language calculator")
-name1 = input("What is your name?\n ")
-name2 = input("What is their name?\n ")
+name1 = input("What is your name?\n ").lower()  #lowers the caps on the name given AnGelA -> angela
+name2 = input("What is their name?\n ").lower()
 # word1 = ['t','r','u','e']
 # word2 = ['l','o','v','e']
-# word1 = 'true'
-# word2 = 'love'
-#
+
+
+word1 = 'true'
+word2 = 'love'
+
+# count function use case
+#name1.count(word1[0]) #counting the number of occurences the letter in the 0th position (t) in word1 occurs in name1
+
+#letters T R U E. num of times the letters TRUE appears in the first name + num of times the letters TRUE appears in the second name
+firstLetter = name1.count(word1[0]) + name2.count(word1[0])
+secondLetter = name1.count(word1[1]) + name2.count(word1[1])
+thirdLetter = name1.count(word1[2]) + name2.count(word1[2])
+fourthLetter = name1.count(word1[3]) + name2.count(word1[3])
+
+#letters L O V E. num of times the letters LOVE appears in the first name + num of times the letters LOVE appears in the second name
+fifthLetter = name1.count(word2[0]) + name2.count(word2[0])
+sixthLetter = name1.count(word2[1]) + name2.count(word2[1])
+seventhLetter = name1.count(word2[2]) + name2.count(word2[2])
+eigthLetter = name1.count(word2[3]) + name2.count(word2[3])
+
+#lists the letter and the number of occurences in both the first and second name
+print(f"T ocuurs in {firstLetter} times")
+print(f"R ocuurs in {secondLetter} times")
+print(f"U ocuurs in {thirdLetter} times")
+print(f"E ocuurs in {fourthLetter} times")
+totalName1 = firstLetter+secondLetter+thirdLetter+fourthLetter #adding the number of TRUE shows up together
+print(f"Total = {totalName1}")
+
+print(f"L ocuurs in {fifthLetter} times")
+print(f"O ocuurs in {sixthLetter} times")
+print(f"V ocuurs in {seventhLetter} times")
+print(f"E ocuurs in {eigthLetter} times")
+totalName2 = fifthLetter+sixthLetter+seventhLetter+eigthLetter #adding the number of times LOVE shows up
+print(f"Total = {totalName2}")
+
+print(f"Love Score = {totalName1}{totalName2}") #the total count of TRUE beside the total count of LOVE
+
+loveScore = str(totalName1)+str(totalName2) #typecasting to string to be used as a variable in the if/else statement
+
+if int(loveScore) > 90 or int(loveScore) < 10:
+    print("Your score is "+loveScore+" and you go together like coke and mentos")
+elif int(loveScore) > 40 and int(loveScore) < 50:
+    print("Your score is "+loveScore+" and you are alright together")
+else:
+    print("Your score is "+loveScore)
 # print("first name")
 # trueInName1 = name1.count(word1[0])+name1.count(word1[1])+name1.count(word1[2])+name1.count(word1[3])
 # print(f"letters t r u e occur in the first name {trueInName1} times")
@@ -24,19 +66,19 @@ name2 = input("What is their name?\n ")
 
 
 #count
-word1 = 'truelove'
-
-# name1.count(word1[0]) #counting the number of occurences the letter in the 0th position (t) in word1 occurs in name1
-
-print("first name")
-wordInName1 = name1.count(word1[0])+name1.count(word1[1])+name1.count(word1[2])+name1.count(word1[3])+name1.count(word1[4])+name1.count(word1[5])+name1.count(word1[6])+name1.count(word1[7])
-print(f"letters t r u e l o v e occur in the first name {wordInName1} times")
-
-print("second name")
-wordInName2 = name2.count(word1[0])+name2.count(word1[1])+name2.count(word1[2])+name2.count(word1[3])+name2.count(word1[4])+name2.count(word1[5])+name2.count(word1[6])+name2.count(word1[7])
-print(f"letters t r u e l o v eoccur in the second name {wordInName2} times")
-
-
+# word1 = 'truelove'
+#
+# # name1.count(word1[0]) #counting the number of occurences the letter in the 0th position (t) in word1 occurs in name1
+#
+# print("first name")
+# wordInName1 = name1.count(word1[0])+name1.count(word1[1])+name1.count(word1[2])+name1.count(word1[3])+name1.count(word1[4])+name1.count(word1[5])+name1.count(word1[6])+name1.count(word1[7])
+# print(f"letters t r u e l o v e occur in the first name {wordInName1} times")
+#
+# print("second name")
+# wordInName2 = name2.count(word1[0])+name2.count(word1[1])+name2.count(word1[2])+name2.count(word1[3])+name2.count(word1[4])+name2.count(word1[5])+name2.count(word1[6])+name2.count(word1[7])
+# print(f"letters t r u e l o v eoccur in the second name {wordInName2} times")
+#
+#
 
 
 
