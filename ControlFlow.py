@@ -112,7 +112,7 @@ extraCheese = input("Do you want extra cheese? (Y/N): ")
 if extraCheese == 'Y':
     price += 1
 
-    #print(f"Your total bill is ${price}.00")  #indentation here is wrong as it makesthe price exclusive to the extraCheese condition
+    #print(f"Your total bill is ${price}.00")  #indentation here is wrong as it makes the price exclusive to the extraCheese condition
 print(f"Your total bill is ${price}.00")  #indentation here because of price increaments
 
 # else:
