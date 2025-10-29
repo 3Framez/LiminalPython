@@ -1,6 +1,4 @@
 #Lists -a collection of multiple elements. Unlike strings, They are mutable (can be changed)
-
-
 myList = [3,2,4,1,5]
 print(myList.index(4)) #locating the index position of a specific element
 countList = myList.count(3) #number of times a specific elements occurs
@@ -37,7 +35,8 @@ list1 = [1,2,3,4,5,6]
 list2 = ["b","d","a","z","x"]
 newList = list1 + list2
 print(newList)
-
+newList.extend([6,7]) #unlike append which puts the entire list as a single element [...,[6,7]]. extend, adds the elements 6,7 seperately into the list
+print(newList)
 """
 from the 2 lists above get the result: ['d','b','a',3,2,1]
 """
@@ -52,7 +51,78 @@ print(list2[2:5]+list1[-3:]) #start slicing from the 2nd position : include elem
 
 list1 = [1,2,3,4,5,6]
 print(list1[2:5]) #start slicing from the second index position: and give me 5 elements starting from the beginning of the list
-# to get [3,4,5]
-# why doesnt this work
 
 
+
+
+
+print(" ")
+#Randomisation
+
+import random  #random library invoked when using random
+
+
+import myModule
+print(myModule.pi)
+
+randomInt = random.randint(1,10) #random integers ranging from 1 to 10. random *module* . randint() *function*
+print(randomInt)
+randomFloat = random.random() #returns floating value from 0.0 to 1.0 (excluding 1.0)
+print(randomFloat)
+randomFloat = random.random() * 5 #returns floating value from 0.0 to 5.0 (excluding 5.0)
+print(randomFloat)
+
+#COIN FLIP
+"""
+heads = 1
+tails = 0
+depending on the random number, print out heads or tails
+"""
+
+randomChoice = random.randint(0,1)
+print(randomChoice)
+if randomChoice == 1:
+    print("Heads")
+else:
+    print("Tails")
+
+
+#PAY THE BILL
+"""
+iput: 4 names
+output: single name...*name* is going to buy the meal today
+"""
+import random
+
+#with given names
+names = ["Angela", "Stacy", "Sunny", "Johnny"]
+#to use randint, we need to get the first and last position of the list as integers
+pos1 = names.index("Angela")   #index() gives the position as a numeric value
+pos2 = len(names) - 1 #length of the list -> 4, but we have 3 index positions [0,1,2,3], so '-1' is used
+randNames = random.randint(pos1,pos2) #given range
+print(names[randNames]) #output names[*numeric value*] randNames represents the numeric value's index position
+
+#input the names manually
+# name = input("Enter multiple names seperated by a comma and space\n").split(", ") #.split(", ") tells the program what to plit the names with a comma and space
+# print(name) #outputs the names sperated by a comma and space
+# startPosition = name.index(name[0]) #index function to give the numeric value of index position '0'
+# finishPosition = len(name) - 1
+# randName = random.randint(startPosition, finishPosition)
+# print(name[randName])
+
+
+#TREASURE MAP
+"""
+
+"""
+row1 = [" "," "," "]
+row2 = [" "," "," "]
+row3 = [" "," "," "]
+map = [row1, row2, row3]
+print(map)
+print(f"{row1}\n{row2}\n{row3}")
+
+position = input("Where do you want to put the treasure?")
+
+#map[map[2]][3-2] X
+#where column and row meet
