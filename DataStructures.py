@@ -111,18 +111,190 @@ print(names[randNames]) #output names[*numeric value*] randNames represents the 
 # print(name[randName])
 
 
-#TREASURE MAP
-"""
+#COME BACK TO THIS
+# # #TREASURE MAP
+# """
+#
+# """
+# row1 = [" "," "," "] #
+# row2 = [" "," "," "]
+# row3 = [" "," "," "]
+# map = [row1, row2, row3]
+# print(map)
+# value = 'x'
+# # print(map)
+# #column1
+# map[0][0] = 'x' #column 1 row 1
+# map[1][0] = 'x' #column 1 row 2
+# map[2][0] = 'x' #column 1 row 3
+#
+# #column2
+# map[0][1] = 'x'   #column 2 row 1
+# map[1][1] = 'x'   #column 2 row 2
+# map[2][1] = 'x'   #column 2 row 3
+#
+# #column3
+# map[0][2] = 'x' #column 3 row 1
+# map[1][2] = 'x' #column 3 row 2
+# map[2][2] = 'x' #column 3 row 3
+#
+# position = int(input("Where do you want to put the treasure?"))
+#
+# if position == 11:
+#
+#     print(map[map.index(1)])
+#
+#     # print(f"{row1}\n{row2}\n{row3}")
+#     # print(map[0][0])
+#
+#
+#
+# print(" ")
+# print(" ")
+# # row1
+# map[0][0] = 'x'   #column 1 row 1
+# map[0][1] = 'x'   #column 2 row 1
+# map[0][2] = 'x'   #column 3 row 1
+#
+# # row2
+# map[1][0] = 'x' #column 1 row 2
+# map[1][1] = 'x' #column 2 row 2
+# map[1][2] = 'x' #column 3 row 2
+#
+# # row3
+# map[2][0] = 'x' #column 1 row 3
+# map[2][1] = 'x' #column 2 row 3
+# map[2][2] = 'x' #column 3 row 3
+#
+#
+#
+# print(map)
+#
+# print(f"{row1}\n{row2}\n{row3}")
+#
+# # print(len(row1))
+#
+# position = input("Where do you want to put the treasure?")
+#
+# #map[map[2]][3-2] X
+# #where column and row meet
+#
+#
 
-"""
-row1 = [" "," "," "]
-row2 = [" "," "," "]
-row3 = [" "," "," "]
-map = [row1, row2, row3]
-print(map)
-print(f"{row1}\n{row2}\n{row3}")
 
-position = input("Where do you want to put the treasure?")
 
-#map[map[2]][3-2] X
-#where column and row meet
+
+
+#ROCK PAPER SCISSORS
+
+import random
+
+
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.  (___)
+'''
+
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.  (___)
+'''
+
+'''
+rock's chances of winning 
+1 > 3 == win
+
+paper's chances of winning 
+2 > 1
+
+scissors's chances of winning 
+3 > 2
+'''
+
+choices = [rock, paper, scissors]  #we turned the string to indeces, giving them a numeric value, by putting them in a list
+
+
+rockNum = 0
+paperNum = 1
+scissorsNum = 2
+
+computerChoice = random.randint(0,2)
+
+
+userChoice = int(input("Choose a number between 0 to 2!\n"))
+#MY WINS
+#rock wins
+if userChoice == 0 or userChoice == 1 or userChoice == 2:  #catches wrong input
+
+    if userChoice == 0 and computerChoice == 2:
+        print("You chose\n "+rock)
+
+        print("Computer chose\n "+scissors)
+
+        print("Win!")
+    # paper win
+    elif userChoice == 1 and computerChoice == 0:
+        print("You chose\n "+paper)
+
+        print("Computer chose\n "+rock)
+
+        print("Win!")
+    # scissors win
+    elif userChoice == 2 and computerChoice == 1:
+        print("You chose\n " +scissors)
+
+        print("Computer chose\n " +paper)
+
+
+    # MY LOSS
+    if userChoice == 2 and computerChoice == 0:
+        print("You chose\n " + scissors)
+
+        print("Computer chose\n " + rock)
+
+        print("Lose!")
+    # paper win
+    elif userChoice == 0 and computerChoice == 1:
+        print("You chose\n " + rock)
+
+        print("Computer chose\n " + paper)
+
+        print("Lose!")
+    # scissors win
+    elif userChoice == 1 and computerChoice == 2:
+        print("You chose\n " + paper)
+
+        print("Computer chose\n " + scissors)
+
+        print("Lose")
+
+
+    elif userChoice == computerChoice:
+        print(f"You chose\n {choices[userChoice]}")  #choices are [rock,paper,scissors] [0,1,2]
+
+        print(f"computer chose\n {choices[computerChoice]}")
+
+        print("Draw!")
+
+else:
+    print("Wrong Number! Choose either 0,1,2")
+
