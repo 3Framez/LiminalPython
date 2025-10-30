@@ -111,7 +111,7 @@ print(names[randNames]) #output names[*numeric value*] randNames represents the 
 # print(name[randName])
 
 
-#COME BACK TO THIS
+#COME BACK TO THIS SOON
 # # #TREASURE MAP
 # """
 #
