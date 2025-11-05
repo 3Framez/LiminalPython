@@ -1,3 +1,33 @@
+#Dictionaries, are data structures, but unlike lists, and tuples, they're not index based, but key:value based
+
+myDictionary = {"k1": "some data"}
+myDictionary["k2"] = [1,2,3,4,5,6]  #adding to the dictionary
+print(myDictionary)
+print(myDictionary["k1"]) #getting a specific value from the dictionary
+myDictionary["mike"] = 155
+print(myDictionary)
+weightOfMike = myDictionary.pop("mike")  #pops out the value of mike
+print(weightOfMike)
+
+
+
+print("-----------------")
+#Tuples are like lists, but they cannot be mutable/changed
+myTuple = (1,2,3, "data", [1,2,3])
+print(myTuple)
+myTuple[4][2] = [1,2,3,4,5]  #only the nested element ca be changes
+print(myTuple)
+countOfTuple = myTuple.count(1) #doesn't count the occurences of the nested '1'
+print(countOfTuple)
+print(myTuple[3:4]) # -> tuple slicing, outputs 'data'. Start from the 3rd element, give me 4 characters
+
+#string slicing
+data = "Hello data"
+print(data[0:5])
+
+
+
+print("---------------")
 #Lists -a collection of multiple elements. Unlike strings, They are mutable (can be changed)
 myList = [3,2,4,1,5]
 print(myList.index(4)) #locating the index position of a specific element
@@ -56,7 +86,7 @@ print(list1[2:5]) #start slicing from the second index position: and give me 5 e
 
 
 
-print(" ")
+print("------------------ ")
 #Randomisation
 
 import random  #random library invoked when using random
@@ -79,6 +109,7 @@ tails = 0
 depending on the random number, print out heads or tails
 """
 
+print("---------------------")
 randomChoice = random.randint(0,1)
 print(randomChoice)
 if randomChoice == 1:
@@ -87,6 +118,8 @@ else:
     print("Tails")
 
 
+
+print("----------------------")
 #PAY THE BILL
 """
 iput: 4 names
@@ -186,7 +219,7 @@ print(names[randNames]) #output names[*numeric value*] randNames represents the 
 
 
 #ROCK PAPER SCISSORS
-
+print("--------------------------")
 import random
 
 
