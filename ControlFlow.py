@@ -81,7 +81,7 @@ else:
 #
 
 
-
+print("----------------------------")
 #Pizza delivery price checker
 """
 small pizza: $15  ; peperroni: +2
@@ -121,7 +121,7 @@ print(f"Your total bill is ${price}.00")  #indentation here because of price inc
 
 
 
-
+print("-----------------------")
 #Leap year calculator
 """
 leap year is...
@@ -143,6 +143,8 @@ else:
     print(f"{year} is not a leap year")
 
 
+
+print("------------------------")
 #BMI Calculator that determines if youre overweight, underweight or the right weight. BMI = weight/height ^ 2
 height = float(input("Enter height: "))
 weight = int(input("Enter weight: "))
@@ -189,6 +191,7 @@ else: #if and else should be indented on the same line
     print("Sorry, you can't ride!")
 
 
+print("---------------")
 #ODD or EVEN number checker
 num = int(input("Enter a number: "))
 if num % 2 == 0: #even numbers leave no remainders
