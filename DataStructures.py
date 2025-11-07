@@ -8,6 +8,36 @@ myDictionary["mike"] = 155
 print(myDictionary)
 weightOfMike = myDictionary.pop("mike")  #pops out the value of mike
 print(weightOfMike)
+myDictionary.pop('k2') #remove the key:value pair of k2
+print(myDictionary)
+print("---------------------")
+"""
+print bil's salary from myList
+"""
+myList = [{"Tom": 20000, "Bill": 12000, "John": "50000"}, ["car", "laptop", "TV"]]
+
+print(myList[0]["Bill"])
+print(myList[0].get("Bill")) #.get() is also index position based, but is only reserved for dictionaries
+print(myList[0].pop("Bill")) #becuse list are index based, we access the index location of bill first, and then specify the key to pop out the value of Bill
+
+"""
+Tom salary = 20000 age = 22 items = jacket, car, tv
+Mike salary 24000 age = 27 items = bike, laptop, boat
+"""
+#start with two elements, TOM and BILL, so we start of with a list perosns = ['tom', 'Bill']
+persons = [{'Tom':{"salary": 20000, "age": 22, "items": ["jacket", "car", "TV"]}}, {'Bill':{"salary": 24000, "age": 29, "items": ["bike", "laptop", "boat"]}}]
+print(persons[1]["Bill"].get("salary"))
+
+"""
+create a new list sorted with (8,4,3) sorted
+"""
+originalList = ['cup', 'cereal', 'milk', (8,4,3)]
+popTuple = list(originalList.pop()) #tuples can't be changed so we extract it from the list, and typecast it to a list
+popTuple.sort() #doesnt return a value, but changes the list, so print out in new line
+print(popTuple) #sorted list
+newTuple = tuple(popTuple)   #typecast back to a tuple
+originalList.append(newTuple) #add sortedtuple back into the list
+print(originalList)
 
 
 
