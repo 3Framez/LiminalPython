@@ -1,3 +1,66 @@
+"""
+Find the index position of a specific element in a tuple.
+"""
+tuples = ('a','b','c','d')
+indexNumber = tuples.index('c')
+print(indexNumber)
+
+"""
+Create two tuples and concatenate them.
+"""
+tuple1 = (1,2,3,4,5)
+tuple2 = (6,7,8,9,10)
+print(tuple1 + tuple2)
+
+print("----------------------------")
+"""
+Write a program to check if a given value exists inside a tuple.
+"""
+value = input("Enter elements: ").split(" ")
+tupleValue = tuple(value)
+print(tupleValue)
+
+element = input("Enter value you want to check: ")
+
+if tupleValue.count(element) >= 1:  #count the number of times 'element' occurs in 'tupleValue'
+    print(f"{element} exists in {tupleValue}")
+else:
+    print("Doesn't exist")
+
+
+
+print("----------------------------")
+"""
+Given a tuple (5, 10, 15, 20, 25), 
+convert it to a list, 
+change the middle element to 100, 
+and convert it back to a tuple.
+"""
+
+myTuple  = (5, 10, 15, 20, 25)
+myList = list(myTuple)
+myList[2] = 100
+newTuple = tuple(myList)
+print(newTuple)
+
+
+print("----------------------------")
+"""
+Create a tuple with 5 elements and print the second and last elements.
+"""
+#SIMPLE
+myTuple = ("h","i",4,6,8)
+print(myTuple[1], myTuple[4])
+#COMPLEX
+myElements = input("Enter a number of elements: ").split(" ")
+myTuple = tuple(myElements)
+print(myTuple)
+lengthOfTuple = len(myTuple)
+print(myTuple[1], myTuple[lengthOfTuple - 1])
+
+
+
+
 
 
 print("----------------------------")
