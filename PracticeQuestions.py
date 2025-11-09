@@ -1,5 +1,115 @@
 
 
+print("----------------------------")
+"""
+Write a program that removes all duplicate elements from a list.
+"""
+elements = input("Enter numbers with duplicates: ").split(" ")
+print(elements)
+uniqueElements = set(elements)  #set function identifies unique elements in an unordered way
+print(f"Unique elements: {uniqueElements}")
+
+
+
+print("----------------------------")
+"""
+Sort a list of integers in descending order and print the result.
+"""
+numbers = input("Enter a bunch of numbers to be sorted: ").split(" ")
+print(numbers)
+numbers.sort() #sorts numbers from small to large
+numbers.reverse() #largest first smalesst last
+print(numbers)
+
+
+
+
+print("----------------------------")
+"""
+Given fruits = ["apple", "banana", "cherry", "apple"], count how many times "apple" appears.
+"""
+
+fruits = ["apple", "banana", "cherry", "apple"]
+numOfApples = fruits.count("apple")
+print(numOfApples)
+
+
+print("----------------------------")
+"""
+Sort a list of integers in descending order and print the result.
+"""
+
+"""
+Write a program that asks for 5 names and stores them in a list. Then print only those names that start with "A".
+"""
+# for loop
+#ifelse .count()
+
+#
+# names = input("Enter 5 names seperated by a comma and space: ").split(", ")
+# print(names)
+# name1 = names[0][0]
+# name2 = names[1][0]
+# name3 = names[2][0]
+# name4 = names[3][0]
+# name5 = names[4][0]
+#
+# print(name1, name2)
+# print(name1.count("A"))
+#
+# # if name1 == "A" or name2 == "A"
+# # print(names)
+#
+# if name1.count("A") == 1 or name2.count("A") == 1:
+#     print(names.startswith("A"))
+
+
+
+
+print("----------------------------")
+"""
+Replace the last element of any list with "Python".
+"""
+
+
+elements = input("Enter elements within a list followed by a comma and space: ").split(", ") # split() method to show the what seperates each element, and store the contents in a list
+
+lengthOfList = len(listOfElements) #to get the total length count of 'elements'
+print(f"original list: {listOfElements}")
+listOfElements[lengthOfList - 1] = "Python" #referncing the last element of the entire list
+print(f"final list: {listOfElements}")
+
+
+print("----------------------------")
+"""
+Given numbers = [10, 20, 30, 40, 50], insert 25 between 20 and 30.
+"""
+numbers = [10, 20, 30, 40, 50]
+num1 = numbers[0:2]
+num2 = numbers[2:]
+num1.append(25)
+print(num1 + num2)
+numbers.insert(2,25)  #using the insert method. insert 25 at the second index position
+print(numbers)
+
+
+print("----------------------------")
+"""
+Create a list of 5 numbers. Print the sum, maximum, and minimum.
+"""
+listNumbers = [10,13,5,9,12]
+num1 = listNumbers[0]
+num2 = listNumbers[1]
+num3 = listNumbers[2]
+num4 = listNumbers[3]
+num5 = listNumbers[4]
+
+numbers = num1, num2, num3, num4, num5
+print(sum(numbers))   # WRONG : listNumbers.sum() means (sum()) is a method, belonging to a list object; RIGHT: but 'sum()' is a function, so it wraps around an object
+print(sum(listNumbers))
+print(min(listNumbers))
+print(max(listNumbers))
+
 
 
 
