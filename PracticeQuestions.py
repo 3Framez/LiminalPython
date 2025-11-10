@@ -1,4 +1,70 @@
 """
+Ask for a sentence and print how many words it contains (use .split()).
+"""
+sentence = input("Enter sentence\n").split(" ")
+countOfWords = len(sentence)
+print(countOfWords)
+
+
+
+print("----------------------------")
+""" ***
+Given "Hello World", print only the vowels.
+"""
+word = "hello world"
+newWord = word[1]+word[4]+word[7]
+print(newWord)
+
+print("----------------------------")
+"""
+Replace all spaces in a string with underscores (_).
+"""
+word = "hello all how are you"
+newWord = word.replace(" ","_") #replace(old,new)
+print(newWord)
+
+
+
+print("----------------------------")
+"""
+Reverse a string without using slicing.
+"""
+word = "hello world"
+wordList = list(word)
+wordList.reverse()
+newWord = "".join(wordList)  #join() method is used to combine all the elements into a single string ; "seperator".join(list)
+print(newWord)
+
+print("----------------------------")
+"""
+Check if a string starts with "Py" and ends with "on".
+"""
+word = input("Enter a string: ")
+
+if word[0:2] == "Py" and word[-2:]:
+    print(f"The word '{word}' starts with '{word[0:2]}' and ends with '{word[-2:]}' ")
+
+
+print("----------------------------")
+"""
+Write a program that counts how many times the letter "a" appears in a string.
+"""
+word = input("Enter word: ")
+print(f"a appears in {word}, {word.count('a')} times")
+
+
+print("----------------------------")
+
+
+"""
+Ask the user for their full name and print it in title case (each word capitalized).
+"""
+name = input("Enter full name\n")
+print(name.upper())
+
+print("----------------------------")
+
+"""
 Find the index position of a specific element in a tuple.
 """
 tuples = ('a','b','c','d')
