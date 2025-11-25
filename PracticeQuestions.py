@@ -1,4 +1,477 @@
 """
+Generate a random password of length 8 using:
+letters, numbers, and symbols
+"""
+import random
+
+# letters  = input("Enter some letters: \n")
+# numbers  = input("Enter some numbers: \n")
+# symbols  = input("Enter some symbols: \n")
+
+letters  = input("Enter some letters: \n")
+letterLength = len(letters)  #gets the total length of letters being entered
+for x in range(0,3):  #iterates 3 times
+    randLetter = random.randint(1,letterLength - 1)  #the 1st iteration it selects a random letter, and reiterates to get another random
+    print(letters[randLetter] ) #as it iterates three times
+
+
+numbers  = input("Enter some numbers: \n")
+numLength = len(numbers) #prevents index out of range, and gets length of all numbers
+for x in range(0,3):
+    randNum = random.randint(1,numLength - 1)  #iterates thrice and each time, gets a different random number
+    print(randnumbers[randNum]) #select a random letter from the given string, then iterate 2 more times and repeat
+
+
+symbols  = input("Enter some symbols: \n")
+symbolLength = len(symbols) #prevents index out of range and gets entire length of symbols
+for x in range(0,2): #2 iterations
+    randSymbol = random.randint(1,symbolLength - 1) #iterates twice, and each time gets a different random number
+    print(symbols[randSymbol]) #based on 2 iterations, it prints 2 symbols with differnt index positions
+
+print("Your random password is :")
+print(letters[randLetter]+numbers[randNum]+symbols[randSymbol])
+
+
+print("--------------------")
+"""
+Create a list of 5 fruits and print a random choice.
+"""
+import random
+
+
+fruits = input("Enter fruits: \n").split()
+
+fruitLength = len(fruits) #to prevent errors like index out of range, we get the length of the entire list
+randNum = random.randint(1,fruitLength -1) #lenght of list - 1 = index positions
+print(fruits[randNum])
+
+
+
+print("------------------------")
+"""
+Generate a random number between 1 and 10 and ask the user to guess it.
+"""
+import random
+
+randNum = random.randint(1,3)
+
+# for x in range(1):
+guess = int(input("Enter guess: "))
+print(guess)
+if guess == randNum:
+    print("You guessed correctly!")
+else:
+    print("Try again")
+
+
+
+print("------------------")
+"""
+Print only the numbers between 1–100 that are divisible by both 3 and 7.
+"""
+for num in range(1,100):
+    if num % 3 == 0 and num % 7 == 0:
+        print(num)
+
+
+
+
+print("------------------")
+"""
+Print all numbers from 1 to 50 but skip numbers divisible by 4 (continue).
+"""
+for num in range(1,50):
+    if num > 0 and num % 4 != 0: #it iterates and when it gets to 4's it skips and checks the condition below, then reiterates again
+        print(num)
+    if num % 4 == 0:
+        print("continue")
+
+print("-------------------")
+"""
+Ask for a number and print its multiplication table from 1 to 10.
+"""
+num = int(input("Enter number: \n"))
+
+for x in range(1,10):
+   print(num * x)
+
+
+
+
+print("---------------------")
+"""
+Print numbers from 100 down to 1 using range with a negative step.
+"""
+for num in range(100,0,-1): #to use a negative step, the start has to be the biggest (100) and the end has to be the smallest
+    print(num)
+
+
+
+print("------------------")
+"""
+Print all multiples of 5 from 1 to 100.
+"""
+for num in range(0,101,5):
+    print(num)
+
+
+
+
+
+print("-----------------")
+"""
+Given a dictionary of items and prices, ask the user for an item and print its price.
+If not found, print "Item not available".
+"""
+person = {"name": "John", "age": 25, "city": "Toronto"}
+print(person["name"]) #gives the value john
+print(person.values())
+
+diction = {} #empty storage
+
+for x in range(3):  #iterate 3 times
+    item = input("Enter an item: \n")
+    price = input("Enter its price: \n")
+    diction[item] = price #assign a value to a key
+print(diction)
+print(diction.keys())
+print(diction.items())
+request = input("What item do you want?\n ") #request a key
+if request in diction.keys(): #if the request is present in the keys then...
+    print("The item is "+request+" and its price is "+diction[request]) #request, represents the key/item, diction[] retrieves the value of the specified item
+else:
+    print("Item not found!")
+
+
+
+print("------------------")
+"""
+Count how many times each word appears:
+"""
+
+dicto = {}  #empty dictionary to store the key value pair
+words = ["hi", "hello", "hi", "bye", "hello", "hi"]
+
+for word in words:  #iterate through the list
+    countWord = words.count(word) #counting the occurence of each word in the words list, and
+    #print(countWord) #shows the number of occurence of a word in relation to their position in the list
+    dicto[word] = countWord #assigning a value to a key, for every iteration of a word within the list
+print(dicto) #prints the entire dictionary
+
+print("------------------")
+"""
+Ask the user for three fruits and their prices. Store them in a dictionary, then print it.
+"""
+fp = {} #empty dictionary to store these key value pairs
+for x in range(3):  #iterates thrice to give you three entries of a fruit and its price
+    fruits = input("Enter a fruit: \n")
+    prices = input("Enter its price:\n")
+    fp[fruits] = prices  #with each iteration, it assigns a value to a key
+print(fp)
+
+
+
+
+
+print("--------------------")
+"""
+Update the age to 26 and add "country": "Canada".
+"""
+person = {"name": "John", "age": 25, "city": "Toronto"}
+person['age'] = 26
+person['country'] = 'Canada'
+print(person)
+
+
+print("---------------------")
+"""
+Create a dictionary of 3 students and their scores. Print only the students who scored above 80.
+"""
+dict1 = {"student1": 90 , "student2": 70 , "student3": 81}
+print(dict1.items()) #items() a method used with dictionaires to return the key and value pairs together
+
+for key, value in dict1.items():  #for x, y in dictionary.items()
+    if value > 80:
+        print(key, value)
+
+print("----------------")
+"""
+Count how many times 20 appears in the tuple.
+"""
+t = (10, 20, 30, 20, 40)
+print(t.count(20))
+
+
+
+print("---------------------")
+"""
+Create a tuple of 5 numbers and print:
+First element
+Last element
+Length of the tuple
+"""
+myTuple = (1,2,3,4,5)
+print(myTuple[0])
+print(myTuple[-1])
+print(len(myTuple))
+
+
+print("--------------------")
+"""
+Ask the user for 5 names, store them in a list, then print only names longer than 4 characters.
+"""
+names = input("Enter 5 names:\n ").split()
+for name in names:
+    if len(name) > 4:
+        print(name)
+
+
+
+print("----------------------")
+"""
+Insert "yellow" at index 1 and delete "blue".
+"""
+colors = ["red", "blue", "green"]
+colors[1] = 'yellow'
+print(colors)
+
+
+print("-------------------")
+"""
+Ask the user for 5 numbers and store them in a list. Then print:
+The list sorted
+The max number
+The min number
+"""
+numbers = input("Enter 5 numbers: ").split()
+numbers.sort()
+print(numbers)
+print(max(numbers))
+print(min(numbers))
+
+#max without max function
+maxNum = 0
+for num in numbers:
+    numInt = int(num)
+    if numInt > maxNum:
+        maxNum = numInt
+print(maxNum)
+
+#min without min function
+minNum = int(numbers[0])  #minNum = 0 cant be, because 0 is ultimately the lowest number
+for num in numbers:
+    numInt = int(num)
+    if numInt < minNum:
+        minNum = numInt
+print(minNum)
+
+
+
+print("---------------------")
+"""
+Ask for 3 numbers and print the largest
+"""
+nums = input("Enter 5 numbers: ").split()
+
+# numbers = []
+# numInt = nums
+num = 0  #starting position
+for x in nums:
+    intX = int(x)
+    if intX > num:
+        num = intX #iterate through, and if you find a bigger number replace it with the current one
+print(num)
+
+print("---------------------")
+"""
+Ask the user for two numbers and print:
+Sum
+Difference
+Product
+Quotient
+"""
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+print(sum([num1,num2]))
+print(num1-num2)
+print(num1*num2)
+print(num1**num2)
+
+
+
+print("---------------------")
+"""
+Ask the user for a month and print how many days it has (February = 28).
+"""
+month = input("Enter month: ")
+
+if month in ["January", "March", "May", "July", "August", "October", "November", "December"]:
+    print("31 days")
+elif month in ["April", "June", "September"]:
+    print("30 days")
+elif month in ["February"]:
+    print("28 days")
+
+print("---------------------")
+"""
+Ask for a number and print whether it is even, odd, or divisible by 5 (nested conditions).
+"""
+number = int(input("Enter an integer: "))
+
+if number % 2 == 0:
+    print("This number is even")
+    if number % 5 == 0:
+        print("This number is divisible by 5")
+elif number % 2 != 0:
+    print("This number is odd")
+    if number % 5 == 0:
+        print("This number is divisible by 5")
+
+
+print("---------------------")
+"""
+Ask the user for an integer and check if it’s positive, negative, or zero.
+"""
+number = int(input("Enter an integer: "))
+if number > 0:
+    print(f"The number {number} is positive")
+elif number < 0:
+    print(f"The number {number} is negative")
+elif number == 0:
+    print(f"The number {number} is zero")
+
+
+
+print("---------------------")
+"""
+Ask the user for their score (0–100) and print:
+"A" for 90+
+"B" for 80–89
+"C" for 70–79
+"D" for 60–69
+"F" for below 60
+"""
+score = int(input("What is your score (0-100): "))
+
+if score >= 90:
+    print("A")
+elif score >= 80 and score <= 89:
+    print("B")
+elif score >= 70 and score <= 79:
+    print("C")
+elif score >= 60 and score <= 69:
+    print("D")
+elif score < 60:
+    print("F")
+
+print("---------------------")
+"""
+Write a program that prints the sum of all integers from 1 to 100.
+"""
+numRange = range(0,101)
+startNum = 0
+for num in numRange:
+    startNum += num
+print(startNum)
+
+
+
+
+print("---------------------")
+"""
+Given a list of numbers, print only those that are greater than 10.
+"""
+number = input("Enter a list of numbers: ").split()  # put numbers in a list
+print(number)
+
+for num in number:      #num (type string) number (type list)
+    intNum = int(num)   #convert num to type int
+    if intNum > 10:
+        print(intNum)
+
+print("---------------------")
+"""
+Ask the user for a word and print each letter on a new line.
+"""
+word = input("Enter a word: ")
+for w in word:
+    print(w)
+
+
+print("---------------------")
+"""
+Print all even numbers between 1 and 30 using a for loop and range().
+"""
+
+evenNum = range(0,31,2)
+for num in evenNum:
+    print(num)
+
+
+
+print("---------------------")
+"""
+Write a program that prints all numbers from 1 to 50 using a for loop.
+"""
+numbers = range(1, 51)
+for num in numbers:
+    print(num)
+
+print("---------------------")
+"""
+Merge two dictionaries into one.
+"""
+#key["letter"] = "a"
+
+collection1 = {}
+collection2 = {}
+
+key1 = input("Enter the keys pair of first dictionary: ").split(" ")
+value1 = input("Enter the values of the first dictionary: ").split(" ")
+
+
+
+
+newCollection = collection1 + collection2
+
+
+"""
+Write a program that counts how many times each word appears in this list:
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+"""
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+#SIMPLE
+apple = words.count("apple")
+print(f"apple ocurs {apple} times")
+banana = words.count("banana")
+print(f"banana ocurs {banana} times")
+orange = words.count("orange")
+print(f"orange ocurs {orange} times")
+#COMPLEX
+
+
+
+
+
+print("----------------------------")
+"""
+Create a dictionary with keys: name, age, city. Print each key and value.
+
+Add a new key "email" to the dictionary.
+
+Update the value of "city" to "Toronto".
+"""
+person = {"name": "Ephraim", "age": 28, "city": "Calgary"}
+print(person)
+person["email"] = "email.com"
+print(person)
+person["city"] = "Toronto"
+print(person)
+
+print("----------------------------")
+"""
 Ask for a sentence and print how many words it contains (use .split()).
 """
 sentence = input("Enter sentence\n").split(" ")
