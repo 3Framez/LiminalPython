@@ -1,3 +1,7 @@
+
+
+
+
 #Dictionaries, are data structures, but unlike lists, and tuples, they're not index based, but key:value based
 
 myDictionary = {"k1": "some data"}
@@ -175,7 +179,22 @@ print(names[randNames]) #output names[*numeric value*] randNames represents the 
 
 
 #COME BACK TO THIS SOON
-# # #TREASURE MAP
+
+# #TREASURE MAP
+row1 = [" "," "," "]
+row2 = [" "," "," "]
+row3 = [" "," "," "]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+
+position = input("Where do you wnat to put the treasure?")
+
+horizontal = int(position[0])
+verical =  int(position[1])
+
+print(map[vertical - 1])
+
+
 # """
 #
 # """
