@@ -18,3 +18,4 @@ sumOfScores = 0
 for score in scores:
     sumOfScores += score
 print(sumOfScores)
+
