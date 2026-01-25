@@ -1,3 +1,39 @@
+#while loop
+
+#while some condition is true, do something, else do another thing
+
+x = 0
+while x < 10:
+    print(x)
+    x += 1
+else:
+    print("x is not less thsn 10")
+
+
+
+
+
+print("----------------------------------")
+#for loops usingbreak/continue/pass
+greet = "Hello my name is Ephraim"
+farm_animals = ['goat', 'horse', 'chicken', 'cow', 'dog']
+
+for animal in farm_animals:
+
+    if animal == 'horse':
+        continue #continue - skips the condition and continues
+
+    if animal == 'cow':
+        break #break - exits the loop...
+    print(animal)
+    print("Loophas been terminated")
+
+for x in range(0,5):
+#save for later code
+    pass #a placeholder and does nothing
+
+
+
 # Conditional statements
 
 
