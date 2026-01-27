@@ -1,3 +1,56 @@
+#function
+
+#function that takes an unlimited number of arguments
+def mySum(*args):
+     return sum(args)
+
+print(mySum(5,23,44,66))
+
+#functions with parameters that ask for input
+
+def remainder(num1,num2):
+    return num1%num2
+
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+print(reaminder(x,y)) #arguments have been stored in variables and used when the function is called
+
+
+# functions with parameters can be called multiple times
+def remainder(num1,num2):
+    return num1%num2
+
+print(remainder(9,2))
+print(remainder(10,3))
+
+#functions like this without parameters,can only be used once, sothey're limited
+def remainder():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    print(num1 % num2)
+
+
+remainder()
+
+
+
+
+#defining the function
+def greetPerson(name =' '): #default argument if no name is provided
+    '''
+    DOCSTRING: returns a greeting
+    :param name: name
+    :return: hello there + name
+    '''
+    name = input("Enter name: ")
+    print("Hello there "+str(name)) #in case a number is entered
+
+#calling the function
+greetPerson() #the function requires an argument of a string value
+
+
+
+
 #zip combines multiple elements into a tuple
 num = [1,2,3,4,5]
 word = ['a','b','c','d']
