@@ -1,4 +1,141 @@
 """
+Define a function called key_list_items that can accept an unlimited number
+of lists along with another argument. The function should return
+the second to last item in the specific list specified by the user of the function.
+
+Example:
+
+For example, the below function call should return: jan
+
+key_list_items("people", things=['book', 'tv' ], people=['pete', 'mike', 'jan', 'tom' ])
+
+-> if you specify people, it will return jan
+"""
+
+def key_list_items(string1, **kwargs):
+    value = kwargs[string1]    #key word arg[value of passed string]
+    return value[-2] #within the passed string's container [go to the second to last position]
+
+print(key_list_items( "people", things=['book', 'tv' ], people=['pete', 'mike', 'jan', 'tom' ]))
+
+
+def last_lists(*args):
+    return args[-1] #the value of the index position
+
+print(last_lists([1,2,3,4,5], ['a', 'b', 'c'], ['drew', 'jake']))
+
+
+
+print("--------------------------------------")
+"""
+Define a function called last_list that can accept an unlimited number
+of lists but returns only the last list.
+
+Example:
+For example, the below function call should return ['mike', 'john' ]
+last_list([1,2,3,4,5], ['a', 'b', 'c'], ['mike', 'john'])
+"""
+
+def last_list(*args):
+    argsList = list(args)
+    return argsList.pop()
+
+print(last_list([1,2,3,4,5], ['a', 'b', 'c'], ['mike', 'john']))
+
+
+
+print("-----------------------------------")
+"""
+Create a function called multi merge that takes a list and a string
+as arguments.
+
+The function is supposed to return a merged list
+containing the original list argument as well as each of the words that are in the string argument
+in addition to each of the characters in the string argument as individual elements in the list.
+
+Q. nested functions
+input: list([1,2,3]) , 'hello' , 'h','e','l','l','o'
+output: [1,2,3,hello,'h','e','l','l','o']
+"""
+
+def multi_merge(string1, list1):
+
+    finalStr = []
+    for char in string1:
+        finalStr += char
+    return finalStr + string1.split() + list1
+
+print(multi_merge('hello me', [1,2,3,4]))
+
+
+
+
+
+print("------------------------------------")
+"""
+create a function called separate() that accepts a string as an argument
+and returns a list containing each of the characters of
+the string separated as individual items in the list.
+
+input = hello
+output = [h,e,l,l,o]
+"""
+
+#function definition that accepts a parameter
+def seperates(string):
+    stringsList = []
+    for str in string:
+        stringsList += str
+    return stringsList
+
+#funtion call that accepts an arguments
+print(seperates('hello'))
+
+
+#function definition that accepts no parameters
+def seperate():
+    stringList = []  #an empty storage container to store each characterin the list
+    string = input("Enter a string: ") #asks the user to enter any string
+    for str in string: #iterates through the string
+        stringList += str  #adds each character within the string to a list
+    return stringList  #returns the value of the once empty storage now filled with elements
+
+
+#funtion call that accepts no arguments
+print(seperate())
+
+
+
+
+print("-----------------------------------------")
+"""
+Create a function named merge_lists that accepts 2 lists.
+The function is supposed to merge both of those lists together
+and return the result.
+"""
+#funtion definition with parameters
+def merge_lists(list1,list2):
+    return list1 + list2
+
+#function call that takes arguments
+print(merge_lists([1,2,3],['a','b','c']))
+
+
+# function definition without parameters
+def merge_list():
+    list1 = input("Enter each elements in the first list followed by a space: ").split(" ")
+    list2 = input("Enter each elements in the second list followed by a space: ").split(" ")
+    return list1+list2
+
+print(merge_list()) #function call
+
+
+
+
+
+
+print("-----------------------------------------")
+"""
 Generate a random password of length 8 using:
 letters, numbers, and symbols
 """
@@ -19,7 +156,7 @@ numbers  = input("Enter some numbers: \n")
 numLength = len(numbers) #prevents index out of range, and gets length of all numbers
 for x in range(0,3):
     randNum = random.randint(1,numLength - 1)  #iterates thrice and each time, gets a different random number
-    print(randnumbers[randNum]) #select a random letter from the given string, then iterate 2 more times and repeat
+    print(numbers[randNum]) #select a random letter from the given string, then iterate 2 more times and repeat
 
 
 symbols  = input("Enter some symbols: \n")
