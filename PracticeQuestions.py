@@ -1,4 +1,84 @@
 """
+Given an array of ints, return True if the sequence of numbers 1, 2, 3
+appears in the list anywhere, false otherwise.
+
+sequence([1, 1, 2, 3, 1]) - True
+sequence([1, 1, 2, 4, 1]) - False
+sequence([1, 1, 2, 1, 2, 3]) - True
+sequence([1, 2]) - False
+sequence([]) - False
+"""
+
+def sequence(numList):
+    idxNum = len(numList)
+    #i stands for the index position within the list
+    for i in range(len(numList) - 2): # -2 prevents an index out of range error
+        #numList[i] is the value 1 at index 0|| i + 1 at index position 1 || i+2 at index position 2
+        if numList[i] == 1 and numList[i+1]  == 2 and numList[i+2] == 3:
+        # if numList[i] == 2 and numList[i+1] == 3:
+            return True
+    return False
+
+print(sequence([1, 1, 2, 3, 1]))
+print(sequence([1, 1, 2, 4, 1]))
+print(sequence([1, 1, 2, 1, 2, 3]))
+print(sequence([1, 2]))
+print(sequence([]))
+
+
+
+
+
+print("----------------------------")
+"""
+Create a method called pay_Ixtra that accepts 2 parameters:
+working, and hour. This method will be used to decide whether
+an employee will receive extra pay or not. If an employee is working
+during the hrs of 8pm until 8am in the morning, that means they
+should be paid extra. In that situation the method should return true,
+otherwise it should return false.
+
+NOTE: the hour parameter should be from 0-23.
+So 8AM is hour 8, and 8PM is hour 20.
+hour < 8 or hour > 20
+
+Example:
+pay_extra(true, 11) -> false
+pay_extra(false, 5) -> false
+pay_extra(true, 6) -> true
+"""
+def pay_extra(working,hour):
+    return (((hour >= 20 and hour <= 23) or (hour >= 0 and hour <= 8)) and working)
+
+print(pay_extra(True, 11))
+print(pay_extra(False, 5))
+print(pay_extra(True, 6))
+
+
+
+
+
+print("--------------------------------------")
+"""
+Create a method called twelver that accepts 2 integer arguments: a and b.
+The method should return True if one of the arguments is 12
+or if the sum of both arguments equals 12.
+
+twelver(3, 12) - True
+twelver(4, 9) - False
+twelver(9, 3) - True
+"""
+
+def twelver(a,b):
+    return  (a == 12 or b == 12 or a+b == 12) #instead of using an if/else condition. return the Boolean expression's result
+print(twelver(12,5))
+print(twelver(10,3))
+print(twelver(6,6))
+print(twelver(12,12))
+
+
+print("---------------------------")
+"""
 Define a function called key_list_items that can accept an unlimited number
 of lists along with another argument. The function should return
 the second to last item in the specific list specified by the user of the function.
