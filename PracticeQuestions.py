@@ -1,4 +1,56 @@
 """
+
+"""
+
+
+
+
+print("--------------------------")
+"""
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+grow_string('Code') -'CCoCod Code' -- C Co Cod Code --repeat the first letter twice, repeat the second letter one
+grow_string('abc') - 'aab abc'  -- a ab abc  #3 characters that iterates thrice
+grow_string('ab') - 'a ab'  a ab
+"""
+
+#the first ieration give me one character
+#the second iteration give me 2 characters
+#the third iteration give me 3
+#it iterates and gives characters depending on the length of the string -- ab iterates twice a ab
+
+
+#the first ieration give me one character
+#the second iteration give me 2 characters
+#the third iteration give me 3
+#grow_string('abc') - 'aab abc'  -- a ab abc  #3 characters that iterates thrice
+
+
+def grow_string(strings):
+    newString = ""  #to store the new string
+    num = 0 #increamental counter that starts at 0
+
+    for str in range(len(strings)):  #enables str in strings[str] to be a value of the characters
+        for num in range(len(strings)):  #an incremental value that doesn't exceed the strings length
+
+            num += 1 #increaments depending on the string's length
+            newString += strings[str:num]
+            #strings[start this character: give me this number of characters]  slicing
+            #strings['C':2] next iteration
+        return newString #strings[str] + strings[str:2] + strings[str:3] + strings[str:4] #iteration is dependnat on the length of string
+
+
+
+print(grow_string('Code'))
+
+
+
+
+
+
+
+print("-------------------------------------------------")
+"""
 Given an array of ints, return True if the sequence of numbers 1, 2, 3
 appears in the list anywhere, false otherwise.
 
@@ -11,8 +63,8 @@ sequence([]) - False
 
 def sequence(numList):
     idxNum = len(numList)
-    #i stands for the index position within the list
-    for i in range(len(numList) - 2): # -2 prevents an index out of range error
+    #iterates through the entire list and checks 3 positions
+    for i in range(len(numList) - 2): #i, an integer stands for the index position within the list # -2 prevents an index out of range error because we are checking for 2 extra positions
         #numList[i] is the value 1 at index 0|| i + 1 at index position 1 || i+2 at index position 2
         if numList[i] == 1 and numList[i+1]  == 2 and numList[i+2] == 3:
         # if numList[i] == 2 and numList[i+1] == 3:
@@ -48,7 +100,10 @@ pay_extra(false, 5) -> false
 pay_extra(true, 6) -> true
 """
 def pay_extra(working,hour):
-    return (((hour >= 20 and hour <= 23) or (hour >= 0 and hour <= 8)) and working)
+    # return (((hour >= 20 and hour <= 23) or (hour >= 0 and hour <= 8)) and working)
+    if (((hour >= 20 and hour <= 23) or (hour >= 0 and hour <= 8)) and working):
+        return True
+    return False
 
 print(pay_extra(True, 11))
 print(pay_extra(False, 5))
