@@ -20,18 +20,11 @@ iteration 2 -> index 1, index 2
 iteration 3 -> index 2, index 3
 """
 
-# def last2(strings):
-#     last2Char = strings[-2:] #start from the 2nd last position and give me the remaining characters
-#     chosenCar = strings[:-2]  #evey character besides the last 2
-#     for s in strings:
-#
-#             return strings[:-2].count(last2char) #count the number of occurence of the last 2 characters in the given string
-#
-#
-strings = 'leleleaxagle'
-last2Char = strings[-2:]
-chosenChar = strings[:-2]
-numOfChar = 1
+
+# strings = 'leleleaxagle'
+# last2Char = strings[-2:]
+# chosenChar = strings[:-2]
+# numOfChar = 1
 
 # countList = 0
 # for i in range(len(chosenChar)): #**
