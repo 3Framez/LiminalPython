@@ -1,6 +1,119 @@
 """
+Create a method called last2 that accepts a string argument.
+The method should return the count of the number of times that the last
+2 characters appear in the rest of the string. You should not count
+the last 2 characters as an occurrence. The last 2 characters is just the
+sequence your method should look for in the remaining string.
 
+So "hixxxhi" yields 1 (we won't count the end substring).
+
+last2('hixxhi') - 1   hi xxhi
+last2('xaxxaxaxx') -1  xa xx axaxx
+last2('axxxaaxx') -2   a xx xx aa xx
+
+take note of the last 2 characters
+iterate through the characters
+if an occurrence of the last 2 characters exist in the string (not counting the last 2), return the count
+when iterating count first 2 characters, the next iteration, counts the second and third character
+iteration 1 -> index 0, index 1
+iteration 2 -> index 1, index 2
+iteration 3 -> index 2, index 3
 """
+
+# def last2(strings):
+#     last2Char = strings[-2:] #start from the 2nd last position and give me the remaining characters
+#     chosenCar = strings[:-2]  #evey character besides the last 2
+#     for s in strings:
+#
+#             return strings[:-2].count(last2char) #count the number of occurence of the last 2 characters in the given string
+#
+#
+strings = 'leleleaxagle'
+last2Char = strings[-2:]
+chosenChar = strings[:-2]
+numOfChar = 1
+
+# countList = 0
+# for i in range(len(chosenChar)): #**
+#     # strings[i:2]
+#     numOfChar += 1
+#     result = chosenChar[i:numOfChar]
+#     # print(result)
+#     countResult = result.count(last2Char)
+#     print(type(countResult))
+#     print(countResult)
+#     countList += countResult
+# print(countList)
+# print("-------------------")
+
+
+def last2(strings):
+    countNum = 0
+    last2Char = strings[-2:]
+    chosenChar = strings[:-2]
+    numOfChar = 1
+    for i in range(len(chosenChar)): #**
+        numOfChar += 1
+        result = chosenChar[i:numOfChar]
+        # print(result)
+        # print(result.count(last2Char))
+        countResult = result.count(last2Char)
+        countNum += result.count(last2Char)
+        # print(countNum)
+
+        continue #allows the for loop to loop again
+
+    return countNum#.count(last2Char) #.count(last2Char)
+#
+print(last2('leleleaxagle'))
+print(last2('axxxaaxx'))
+
+# for every iteration give me 2 characters he, el, lo
+# word = 'hello'
+# counter = 1
+# for w in range(len(word)):
+#     counter += 1
+      #print(word[w:2])#start from 0, give me two characters -> 'he'...start from 1 give me two characters -> e?? i can't, as im already at the second character 'e'...
+#     print(word[w:counter])
+#     print(word[w:counter].count('e'))
+#
+# lists = [1,2,3,4,1]
+# print(lists.count(1))
+
+# word = 'hello'
+# print(word[:-2])
+
+
+print("-------------------------------")
+"""
+Define a function that accepts a list as an argument
+and returns True if one of the first 4 elements
+in the list is a 6. The list length may be less than 4.
+
+first3([1, 2, 6, 3, 4]) - True
+first3([1, 2, 3, 4, 6]) - False
+first3([1, 2, 3, 4, 5]) - False
+
+it itrates through 4 times
+checks the first element if it is a 6 print True, else iterate again
+"""
+
+def first3(listNum):
+# 4 index positions, but 5 elements, so -1 stops the check of the 5th element
+   # for n in range(len(listNum) - 1):  #wont work with a list of 1 because when len(listNum) is 1 (first element/index postion), 1 - 1 = 0
+    for n in range(min(4, len(listNum))):  #min tells me to loop at most 4 times but no more than the length of the list
+        if listNum[n] == 6: #if any of the values in the list == 6 in the given range, return True
+            return True
+    return False
+
+
+print(first3([1, 2, 6, 3, 4]))
+print(first3([1, 2, 3, 4, 6]))
+print(first3([1, 2, 3, 4, 5]))
+print(first3([1,3,4,6,8,8,5,3]))
+print(first3([6]))
+print(first3([6,3]))
+
 
 
 
@@ -30,7 +143,7 @@ def grow_string(strings):
     newString = ""  #to store the new string
     num = 0 #increamental counter that starts at 0
 
-    for str in range(len(strings)):  #enables str in strings[str] to be a value of the characters
+    for str in range(len(strings)):  #enables str in strings[str] to represent the index position of the value of the characters
         for num in range(len(strings)):  #an incremental value that doesn't exceed the strings length
 
             num += 1 #increaments depending on the string's length
@@ -39,9 +152,18 @@ def grow_string(strings):
             #strings['C':2] next iteration
         return newString #strings[str] + strings[str:2] + strings[str:3] + strings[str:4] #iteration is dependnat on the length of string
 
-
+def growString(str):
+    newStr = ""
+    for i in range(len(str)):
+        newStr += str[0:i+1]  #the first iteration str[0:position 0 = 'C' + 1 -> 'Co']
+    return newStr
 
 print(grow_string('Code'))
+print(growString('Code'))
+
+
+word = 'hello'
+print(word[0+1])
 
 
 
