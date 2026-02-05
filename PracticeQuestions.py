@@ -48,25 +48,25 @@ numOfChar = 1
 
 
 def last2(strings):
-    countNum = 0
-    last2Char = strings[-2:]
-    chosenChar = strings[:-2]
-    numOfChar = 1
-    for i in range(len(chosenChar)): #**
-        numOfChar += 1
-        result = chosenChar[i:numOfChar]
-        # print(result)
-        # print(result.count(last2Char))
-        countResult = result.count(last2Char)
-        countNum += result.count(last2Char)
+    countNum = 0  # where to store the final number of occurences of the last two characters
+    last2Char = strings[-2:] #characters we are checking for...start from the 2nd last character and give me the remaining characters
+    chosenChar = strings[:-2] #characters to iterate through...start from the 0 and omit the last two characters
+    numOfChar = 1 #container for the number of characters we want to retrieve... 'hello' -> [0:numOfChar]
+    for i in range(len(chosenChar)): #range that doesnt include the last two character's positions
+        numOfChar += 1 #incremeants after each iteration... value is 2
+        result = chosenChar[i:numOfChar] #chosenChar[0:2] -> chosenChar[1:3] -> chosenChar[2:4]...with each iteration
+        countResult = result.count(last2Char) #counting the number of occurences of the last 2 characters for every iteration
+        countNum += result.count(last2Char) #add up all the number of occurences
         # print(countNum)
 
-        continue #allows the for loop to loop again
+        # continue #allows the for loop to loop again
 
     return countNum#.count(last2Char) #.count(last2Char)
 #
 print(last2('leleleaxagle'))
 print(last2('axxxaaxx'))
+print(last2('xaxxaxaxx'))
+print(last2('hixxhi'))
 
 # for every iteration give me 2 characters he, el, lo
 # word = 'hello'
