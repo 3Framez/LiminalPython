@@ -1,4 +1,86 @@
 """
+Given 2 strings, a and b, return the number of the positions where
+they contain the same length 2 substring. So "xx c aazz" and "xx b aaz"
+yields 3, since the "xx", "aa", and "az" substrings appear in the same
+place in both strings.
+
+EXAMPLE:
+string_match('xxcaazz', 'xxbaaz')  -> xx aa az  - 3
+string_match('abc', 'abc') 2
+string_match('abc', 'axc') - 0
+
+
+"""
+
+# wordA = a
+# wordb = b
+# if
+
+# word = 'hello'
+# word2 = 'eehelo'
+# #gow many times is he in in word2
+#
+# storeWord = ""
+# countWord = 1
+# sumCount = 0
+# for w in range(len(word)):
+#     countWord += 1
+#     # if word == #only count every two characters
+#     print(word[w:countWord])
+#
+# # for word in word2:
+#     sumCount+= word2.count(word[w:countWord])
+#     # print(word2.count(word[w:countWord]))
+#     print(sumCount)
+
+
+
+def string_match(a,b):
+
+
+
+    countA = 1
+    wordA = []
+    for x in range(len(a)):
+        countA += 1
+        wordA += a[x:countA]
+        char2A = a[x:countA]
+        print(a[x:countA])
+        # return a[x:countA]
+        #if wordA[]
+        # choiceA = wordA[char2:2]
+
+    countB = 1
+    wordB = []
+    for x in range(len(b)):
+        countB += 1
+        wordB += b[x:countB]
+        char2B = b[x:countB]
+        print(b[x:countB])
+
+
+
+        print(a.count(char2B))
+    # if
+
+    # for char2 in range(len(wordA)):
+    # if wordA[char2:2]
+
+    # return [[wordA] + [wordB]]
+    # return list(wordA[0:2])
+    # return wordA +" "+wordB
+    # return wordA.count(wordB)
+    # return a[x:countA] +" "+ b[x:countB]
+    # return b[x:countB]
+    # for
+
+
+print(string_match('xxcaazz', 'xxbaaz'))
+
+
+
+print("------------------------------------")
+"""
 Create a method called last2 that accepts a string argument.
 The method should return the count of the number of times that the last
 2 characters appear in the rest of the string. You should not count
