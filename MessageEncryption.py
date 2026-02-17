@@ -4,6 +4,11 @@ def encoder(message):
 
 
 def request():
+    '''
+    DOCSTRING: encrypts or decrpts whatever message is passed
+    input: message/code/shiftNum
+    :return: shiftedLetters
+    '''
     # have a list of letters
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 'l', 'm',
                'n', 'o', 'p', 'q', 'r','s', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -18,7 +23,7 @@ def request():
     code = input("Type 'encrypt' to encrypt, type 'decrypt' to decrypt: ")
     shiftNum = int(input("Type the shift Number: "))
 
-
+    #if you want to encrypt the code
     if code == 'encrypt':
 
 
@@ -27,17 +32,17 @@ def request():
         # counter = 0
         for i in range(len(message)):
             letterPos = letters.index(message[i])  #gets the position of each of the message's character within the list of letters
-            print(letterPos)
+            # print(letterPos)
 
-
+            #position of the message's characters within the letters  + shifted number
             newPosition = letterPos + shiftNum
 
             # shiftNum = 4
             if newPosition < len(letters):
-                print(f"letter position shifted: {newPosition}")
-                print(letters[newPosition]) #shifted result
+                # print(f"letter position shifted: {newPosition}")
+                # print(letters[newPosition]) #shifted result
                 shiftedLetters += letters[newPosition]
-                print(shiftedLetters)
+                # print(shiftedLetters)
                 #whenever the new position exceeds the length of letters, the new position goes back to the start of the list
 
             elif newPosition >= len(letters):
@@ -45,12 +50,11 @@ def request():
                 # the modulo(%) remainder is the position of the new Letter when its new position > length of letters
                 #zzz (25) shifted to 4 = d (4)  || 25 + 4 % 26 = 3 (c)
 
-
-                    newLetterPos = newPosition % len(letters)  #17 + 9 || 19 + 9
-
-
-                    shiftedLetters += letters[newLetterPos]
-                    print(shiftedLetters)
+                newLetterPos = newPosition % len(letters)
+                shiftedLetters += letters[newLetterPos]
+                # print(shiftedLetters)
+        #whatever condition was met, the encoded result will be printed once
+        print(f"Here is the encoded result: {shiftedLetters}")
 
 
 
@@ -72,59 +76,55 @@ def request():
 
 
 
-
+    #if you want to decrypt the code
     elif code == 'decrypt':
 
-        # encrypt()
-        # print(encrypt.shiftedLetters)
-        #find the position of each letter in message and letters
-        #find the
+
 
         #identify the position of the recurring message's letters within the list of letters
-        decodedWord = ''
+        decodedWord = '' #holds the the decrypted message
         for x in range(len(message)):
             letterPos = letters.index(message[x])
-            print(letterPos)
-            # pass
+            # print(letterPos)
 
 
         #get the decoded result -> the new position within the letters
-        # decryptedMsg
-            newPosition = letterPos - shiftNum
-            # print("----------------------")
+            newPosition = letterPos - shiftNum #optional. all we need is letterPos
             # print(newPosition)
 
-        # # for y in range(len(message)):
             shiftedLetter = letters[newPosition]
             decodedWord += shiftedLetter
         print(f"Here is the decoded result: {decodedWord}")
 
 
     #depending on the shift number (1), start from each message's (a) letter...
-
-
-
-
 # ...and select the letter from the list 1 shift from the message's letter ab -> bc
 #let the positions reloop the list of letter z with shift of 2 -> b
 #if it reaches the end of the list of letters, start from the beginning
 
-
-
-
+    else:
+        print('WRONG ENCRYPTION INPUT. START OVER!')
 
 
 def goAgain():
-    goAgain = input("Type 'yes' if you want to go again. Otherwise, type 'no': ")
+    '''
+    DOCSTRING: asks the user if the want to encrypt or decrypt the message being passed again
+    input: yes/no
+    :return: request function
+    '''
+    goAgain = input("Type 'yes' if you want to go again. Otherwise, type 'no': ").lower()
 
     if goAgain == 'yes':
-        return request()
+        return request()  #request, which encrypts and decrypts is called when you type 'yes' to go again
         # return print("go again")
     elif goAgain == 'no':
-        return print(shiftedLetters)
+        return False #exits the program
+    else:
+        print('WRONG GO AGAIN INPUT. START OVER!')
 
 
 
+#calling the function
 request()
-goAgain()
+goAgain() #goAgain is called last because it the request function is called within it
 
