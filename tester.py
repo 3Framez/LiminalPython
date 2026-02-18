@@ -1,152 +1,97 @@
-hangman = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
+#
+#
+#
+#
+# # def clear():
+# #     os.system('cls' if os.name == 'nt' else 'clear')
+# def clear():
+#     os.system('cls')
+#
+# # for x in range(3):
+# #     names = input('Enter a name: \n\n')
+# #     os.system('cls')
+# #     # clear()
+#
+#
+import os
+
+def clear():
+    os.system('cls')
+
+nameAndBid = {}
+print('Welcome to the secret auction program.')
+def request():
+    name = input('What is your name?: \n\n')
+    bid = int(input('What is your bid?: \n\n$'))
+    nameAndBid [name] = bid  #for every name key assign a bid value, and store in the empty defined dictionary above
+    os.system('cls')
+    return addBids()
+
+nameAndBid
+def addBids():
+    bid = input ("are there any other bidders? Type 'yes' or 'no'. \n\n").lower()
+    if bid == 'yes':
+        return request()
+    elif bid == 'no':
+        #getting the higest bid
+        bidValues = nameAndBid.values() #get the values of all the bids, stored in a list
+        maxBid = max(bidValues) #get the highest bid value form the list
+
+        # getting the name of the highest bidder
+        for name, height in nameAndBid.items():
+            if height == maxBid:
+                highestBidder = name
+
+
+                return print(f'The winner is {highestBidder} with a bid of ${maxBid}')
 
 
 
-
-
-wordList = [
-    "apple", "river", "cloud", "music", "light",
-    "forest", "dream", "stone", "ocean", "fire",
-    "wind", "shadow", "star", "path", "echo",
-    "flame", "leaf", "moon", "rain", "sky"]
-
-# randomLetter = input("Enter letter: ")
-
-#step 1 pick a random word
-
-import random
-from random import randint
-
-randomWordIdx = random.randint(0, len(wordList) -1)
-randomWord = wordList[randomWordIdx]
-print(randomWord)
+request()
+# clear()
+# addBids()
 
 
 
-
-
-#step 2 get blank spaces the length of the chosen random word
-
-blankContainer = ''
-for i in range(len(randomWord)):
-        i = '_'
-        blankContainer += i
-print(blankContainer)
-
-        # step 3 convert blankcontainer into a list. because strings are immutable
-blankList = list(blankContainer)
-    # print(blankList)
-
-    # letterPos = randomWord.index(randomLetter)  #doesn't work if letter is not found
-    # print(letterPos)
-# for hang in hangman:
-#     pass
-
-
-countHang = 0 #starts off with showing the gallow of the hangman
-counter = 0
-# step 6 loop after guessing a letter
-# while counter <= len(randomWord): #there are 7 tries counter < 7 because counter starts at 0
-# while counter <= max(len(randomWord), 7) and blankList[counter] != ['-']:
-# while counter <= min(7, len(randomWord)) and blankList[counter] != ['-']:
-# while counter <= len(randomWord) and blankList[counter] != ['-']:
-
-# while counter <= min(7, len(randomWord)):
-while counter <= 20: # and '-' not in blankList:
-# while blankList[counter] != '-':
-    randomLetter = input("Enter letter: ")
-
-    #step 4 assign the random letter into a blenk space if it exists in the random word
-    if randomLetter in randomWord :# and blankList[counter] != '':
-
-                #step 5 get the position of the random Letter within the random word
-                letterPos = randomWord.index(randomLetter)
-                # print(letterPos)
+# employees = {'mike': 27000, 'john': 65000, 'rebecca': 60000, 'tom': 10000}
+#
+# #items()/keys()/values() areexclusive to dictionaries
+#
+# for data in employees.items():  #items returns the key,value pair
+#     print(data) #returns the key,value pair together in a tuple
+#
+# for data in employees.values():  #values returns the values
+#     print(data)
+#
+# for data in employees.keys():  #keys returns the key
+#     print(data)
+#
+# for key, value in employees.items():  #items returns the key,value pair
+#     #returns the key,value pair sperately value
+#     print(key)
+#     print(value)
 
 
 
-                blankList[letterPos] = randomLetter
-                print(blankList)
+# emptyDict = {}
+# for x in range(2):
+#     name = input('Enter name: \n\n')
+#     height = float(input('Enter height: \n\n'))
+#     # emptyDict = name,height
+#     # name.keys()
+#     # height.values()
+#     emptyDict[name] = height
+#     # emptyDict += {name:height}
+#     print(emptyDict)
+#     # print(type(emptyDict))
+#
+# heightVal = emptyDict.values()
+#
+# print(max(heightVal))
+# # print(emptyDict.get(sum(height)))
+# for name, height in emptyDict.items():
+#     if height == max(emptyDict.values()):
+#         # print(emptyDict.keys())
+#         print(name)
 
-                if blankList == list(randomWord):
-                    print("You guessed the word: " + randomWord)
-                    break
-
-    elif randomLetter not in randomWord and countHang < len(hangman):# and randomLetter == '':
-
-
-
-
-            print("You lost a life: ")
-            print(hangman[countHang])
-            countHang += 1
-            # break
-
-
-
-            if countHang == len(hangman) - 1: #exits the loop || ran out of lives
-                print("You ran out of lives: \n"+hangman[-1])
-                break
-
-
-
-
-
-    counter += 1
-
-
-#issues and fixes
-#it takes a life on every entry
-#it should exit the loop if the blank spaces have all been filled
-#every iteration shouldn't take a life
-#words with repeating letters dont get checked apple...the next p doesnt work
 
